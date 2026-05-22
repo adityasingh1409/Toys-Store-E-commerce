@@ -64,7 +64,7 @@
                 </div>
                 <div class="stat-row">
                     <span class="stat-lbl">SPEED</span>
-                    <span class="stat-val" id="speed-display" style="color:#00d2ff">NORMAL</span>
+                    <span class="stat-val" id="speed-display" style="color:#00ff88">NORMAL</span>
                 </div>
             </div>
             <div class="game-controls-panel">
@@ -96,7 +96,7 @@
 
 {{-- Shared Game Styles --}}
 <style>
-:root { --primary:#00d2ff; }
+:root { --primary:#00ff88; }
 .game-back-link { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:#6b7280; text-decoration:none; letter-spacing:0.1em; transition:color 0.2s; }
 .game-back-link:hover { color:var(--primary); }
 .game-page-title { font-family:'Orbitron',sans-serif; font-size:clamp(1.4rem,3vw,2rem); color:#fff; margin:0; }
@@ -110,7 +110,7 @@
 .overlay-sub { color:#6b7280; font-size:0.9rem; line-height:1.6; margin-bottom:24px; }
 .score-highlight { font-family:'Orbitron',sans-serif; font-size:1.4rem; font-weight:700; }
 .game-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:'Orbitron',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.3s ease; padding:13px 28px; border-radius:6px; text-transform:uppercase; border:1.5px solid var(--bc); background:transparent; color:var(--bc); box-shadow:0 0 15px color-mix(in srgb,var(--bc) 20%,transparent); }
-.game-btn:hover { background:var(--bc); color:#030712; box-shadow:0 0 30px color-mix(in srgb,var(--bc) 45%,transparent); transform:translateY(-2px); }
+.game-btn:hover { background:var(--bc); color:#010d06; box-shadow:0 0 30px color-mix(in srgb,var(--bc) 45%,transparent); transform:translateY(-2px); }
 .game-stat-panel,.game-controls-panel,.game-rules-panel { background:rgba(15,23,42,0.7); border:1px solid rgba(16,185,129,0.2); border-radius:12px; padding:20px; backdrop-filter:blur(8px); }
 .stat-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
 .stat-row:last-child { border:0; }
@@ -119,7 +119,7 @@
 .panel-title { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:#6b7280; letter-spacing:0.2em; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:8px; }
 .ctrl-list { display:flex; flex-direction:column; gap:8px; }
 .ctrl-item { display:flex; align-items:center; gap:12px; }
-.ctrl-key { font-family:'Orbitron',sans-serif; font-size:0.65rem; background:rgba(0,210,255,0.1); border:1px solid rgba(0,210,255,0.25); border-radius:4px; padding:3px 8px; color:var(--primary); min-width:50px; text-align:center; }
+.ctrl-key { font-family:'Orbitron',sans-serif; font-size:0.65rem; background:rgba(0,255,136,0.1); border:1px solid rgba(0,255,136,0.25); border-radius:4px; padding:3px 8px; color:var(--primary); min-width:50px; text-align:center; }
 .ctrl-desc { font-size:0.8rem; color:#9ca3af; }
 .rules-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
 .rules-list li { font-size:0.85rem; color:#9ca3af; }
@@ -299,7 +299,7 @@ function drawFrame() {
         // Eyes on head
         if(i===0) {
             ctx.shadowBlur = 0;
-            ctx.fillStyle  = '#030712';
+            ctx.fillStyle  = '#010d06';
             const ex = dir.x===1 ? x+size-6 : dir.x===-1 ? x+2 : x+size/2-4;
             const ey = dir.y===1 ? y_+size-6 : dir.y===-1 ? y_+2 : y_+size/2-4;
             ctx.beginPath(); ctx.arc(ex,ey,2.5,0,Math.PI*2); ctx.fill();

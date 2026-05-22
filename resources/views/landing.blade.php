@@ -101,12 +101,12 @@
         <div class="row g-4">
             @php
             $features = [
-                ['icon'=>'🚚', 'title'=>'FREE_SHIPPING', 'desc'=>'On all orders above $50. Fast delivery to your doorstep with real-time tracking.', 'color'=>'#00d2ff'],
+                ['icon'=>'🚚', 'title'=>'FREE_SHIPPING', 'desc'=>'On all orders above $50. Fast delivery to your doorstep with real-time tracking.', 'color'=>'#00ff88'],
                 ['icon'=>'🔒', 'title'=>'SECURE_PAYMENT', 'desc'=>'256-bit SSL encrypted transactions. Your data is protected at every step.', 'color'=>'#a855f7'],
                 ['icon'=>'🤖', 'title'=>'AI_RECOMMENDATIONS', 'desc'=>'Smart toy suggestions based on age, interests, and play patterns.', 'color'=>'#10b981'],
                 ['icon'=>'🎮', 'title'=>'PLAY_WHILE_SHOP', 'desc'=>'Enjoy 4 exclusive mini-games while you browse. Fun for everyone!', 'color'=>'#f59e0b'],
                 ['icon'=>'🔄', 'title'=>'EASY_RETURNS', 'desc'=>'30-day no-hassle return policy. Not happy? We make it right.', 'color'=>'#ef4444'],
-                ['icon'=>'⚡', 'title'=>'INSTANT_SUPPORT', 'desc'=>'24/7 customer support team. Get answers in seconds, not days.', 'color'=>'#00d2ff'],
+                ['icon'=>'⚡', 'title'=>'INSTANT_SUPPORT', 'desc'=>'24/7 customer support team. Get answers in seconds, not days.', 'color'=>'#00ff88'],
             ];
             @endphp
             @foreach($features as $f)
@@ -125,7 +125,7 @@
 
 {{-- ===== FEATURED PRODUCTS ===== --}}
 @if($featuredProducts->count() > 0)
-<section class="py-5" style="background: rgba(0,210,255,0.02); border-top: 1px solid rgba(0,210,255,0.1); border-bottom: 1px solid rgba(0,210,255,0.1);">
+<section class="py-5" style="background: rgba(0,255,136,0.02); border-top: 1px solid rgba(0,255,136,0.1); border-bottom: 1px solid rgba(0,255,136,0.1);">
     <div class="container">
         <div class="section-header d-flex justify-content-between align-items-end mb-4 flex-wrap gap-3">
             <div>
@@ -179,7 +179,7 @@
             @php
             $games = [
                 ['name'=>'NEON_SNAKE', 'emoji'=>'🐍', 'desc'=>'Classic snake with a glowing neon trail. Grow longer, avoid yourself!', 'color'=>'#10b981', 'route'=>'games.snake', 'tag'=>'ARCADE'],
-                ['name'=>'CYBER_TETRIS', 'emoji'=>'🧩', 'desc'=>'Stack glowing blocks in this cyberpunk twist on the classic.', 'color'=>'#00d2ff', 'route'=>'games.tetris', 'tag'=>'PUZZLE'],
+                ['name'=>'CYBER_TETRIS', 'emoji'=>'🧩', 'desc'=>'Stack glowing blocks in this cyberpunk twist on the classic.', 'color'=>'#00ff88', 'route'=>'games.tetris', 'tag'=>'PUZZLE'],
                 ['name'=>'SPACE_SHOOTER', 'emoji'=>'🚀', 'desc'=>'Pilot your ship. Blast asteroids. Survive the neon cosmos.', 'color'=>'#ef4444', 'route'=>'games.shooter', 'tag'=>'ACTION'],
                 ['name'=>'MEMORY_CARDS', 'emoji'=>'🃏', 'desc'=>'Match toy-themed pairs. Test your memory in record time!', 'color'=>'#f59e0b', 'route'=>'games.memory', 'tag'=>'BRAIN'],
             ];
@@ -253,13 +253,13 @@
 <style>
 /* ─── Orbs ─────────────────────────────────────────────── */
 .orb { position:absolute; border-radius:50%; pointer-events:none; animation: orb-drift 8s ease-in-out infinite alternate; }
-.orb-1 { width:400px; height:400px; top:-100px; right:-100px; background:radial-gradient(circle, rgba(0,210,255,0.12) 0%, transparent 70%); animation-duration:9s; }
+.orb-1 { width:400px; height:400px; top:-100px; right:-100px; background:radial-gradient(circle, rgba(0,255,136,0.12) 0%, transparent 70%); animation-duration:9s; }
 .orb-2 { width:300px; height:300px; bottom:-50px; left:-80px; background:radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%); animation-duration:7s; animation-delay:2s; }
 .orb-3 { width:200px; height:200px; top:50%; left:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(16,185,129,0.06) 0%, transparent 70%); animation-duration:11s; animation-delay:4s; }
 @keyframes orb-drift { from{transform:translate(0,0) scale(1);} to{transform:translate(30px,20px) scale(1.15);} }
 
 /* ─── Hero Badge ────────────────────────────────────────── */
-.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(0,210,255,0.08); border:1px solid rgba(0,210,255,0.25); border-radius:100px; padding:6px 16px; font-family:'Orbitron',sans-serif; font-size:0.7rem; color:var(--primary); letter-spacing:0.1em; }
+.hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(0,255,136,0.08); border:1px solid rgba(0,255,136,0.25); border-radius:100px; padding:6px 16px; font-family:'Orbitron',sans-serif; font-size:0.7rem; color:var(--primary); letter-spacing:0.1em; }
 .badge-dot { width:8px; height:8px; border-radius:50%; background:var(--primary); box-shadow:0 0 8px var(--primary); animation: pulse-dot 2s ease infinite; }
 @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 
@@ -284,45 +284,45 @@
 /* ─── Stats ─────────────────────────────────────────────── */
 .hero-stats { border-top:1px solid rgba(255,255,255,0.08); padding-top:1.5rem; }
 .stat-item { display:flex; flex-direction:column; }
-.stat-num { font-family:'Orbitron',sans-serif; font-size:1.8rem; font-weight:700; color:var(--primary); text-shadow:0 0 15px rgba(0,210,255,0.5); }
+.stat-num { font-family:'Orbitron',sans-serif; font-size:1.8rem; font-weight:700; color:var(--primary); text-shadow:0 0 15px rgba(0,255,136,0.5); }
 .stat-label { font-size:0.65rem; color:#6b7280; letter-spacing:0.15em; margin-top:2px; }
 .stat-divider { width:1px; background:rgba(255,255,255,0.1); align-self:stretch; }
 
 /* ─── Hero Visual ───────────────────────────────────────── */
 .hero-visual { position:relative; width:380px; height:380px; }
-.hex-ring { position:absolute; inset:0; border-radius:50%; border:1px solid rgba(0,210,255,0.2); animation: spin-slow 20s linear infinite; }
-.hex-ring::before,.hex-ring::after { content:''; position:absolute; border-radius:50%; border:1px solid rgba(0,210,255,0.1); inset:-20px; animation: spin-slow 30s linear infinite reverse; }
+.hex-ring { position:absolute; inset:0; border-radius:50%; border:1px solid rgba(0,255,136,0.2); animation: spin-slow 20s linear infinite; }
+.hex-ring::before,.hex-ring::after { content:''; position:absolute; border-radius:50%; border:1px solid rgba(0,255,136,0.1); inset:-20px; animation: spin-slow 30s linear infinite reverse; }
 .hex-ring-2 { border-color:rgba(168,85,247,0.2); animation-duration:30s; animation-direction:reverse; }
 .hex-ring-2::before { border-color:rgba(168,85,247,0.1); }
 @keyframes spin-slow { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 .hero-icon-grid { position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); padding:30px; }
 .toy-float { display:flex; align-items:center; justify-content:center; font-size:2rem; animation: toy-float 3s ease-in-out infinite alternate; }
 @keyframes toy-float { from{transform:translateY(0) rotate(-5deg);} to{transform:translateY(-8px) rotate(5deg);} }
-.hero-center-badge { grid-column:2; grid-row:2; display:flex; align-items:center; justify-content:center; background:rgba(0,210,255,0.1); border:1px solid rgba(0,210,255,0.3); border-radius:50%; font-family:'Orbitron',sans-serif; font-size:0.65rem; font-weight:700; color:var(--primary); text-align:center; line-height:1.3; box-shadow:0 0 30px rgba(0,210,255,0.2), inset 0 0 30px rgba(0,210,255,0.05); }
+.hero-center-badge { grid-column:2; grid-row:2; display:flex; align-items:center; justify-content:center; background:rgba(0,255,136,0.1); border:1px solid rgba(0,255,136,0.3); border-radius:50%; font-family:'Orbitron',sans-serif; font-size:0.65rem; font-weight:700; color:var(--primary); text-align:center; line-height:1.3; box-shadow:0 0 30px rgba(0,255,136,0.2), inset 0 0 30px rgba(0,255,136,0.05); }
 
 /* ─── Buttons ───────────────────────────────────────────── */
 .btn-cyber { display:inline-flex; align-items:center; gap:8px; font-family:'Orbitron',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.1em; text-decoration:none; border:none; cursor:pointer; transition:all 0.3s ease; padding:12px 28px; border-radius:4px; text-transform:uppercase; }
-.btn-cyber-primary { background:transparent; border:1.5px solid var(--primary); color:var(--primary); box-shadow:0 0 15px rgba(0,210,255,0.15); }
-.btn-cyber-primary:hover { background:var(--primary); color:#030712; box-shadow:0 0 30px rgba(0,210,255,0.5); transform:translateY(-2px); }
+.btn-cyber-primary { background:transparent; border:1.5px solid var(--primary); color:var(--primary); box-shadow:0 0 15px rgba(0,255,136,0.15); }
+.btn-cyber-primary:hover { background:var(--primary); color:#010d06; box-shadow:0 0 30px rgba(0,255,136,0.5); transform:translateY(-2px); }
 .btn-cyber-purple { background:transparent; border:1.5px solid #a855f7; color:#a855f7; box-shadow:0 0 15px rgba(168,85,247,0.15); }
 .btn-cyber-purple:hover { background:#a855f7; color:#fff; box-shadow:0 0 30px rgba(168,85,247,0.5); transform:translateY(-2px); }
 .btn-cyber-outline { background:transparent; border:1.5px solid rgba(255,255,255,0.2); color:#e5e7eb; }
-.btn-cyber-outline:hover { border-color:var(--primary); color:var(--primary); box-shadow:0 0 15px rgba(0,210,255,0.2); }
+.btn-cyber-outline:hover { border-color:var(--primary); color:var(--primary); box-shadow:0 0 15px rgba(0,255,136,0.2); }
 .btn-cyber-sm { padding:8px 18px; font-size:0.7rem; }
 
 /* ─── Marquee ───────────────────────────────────────────── */
-.marquee-strip { background:rgba(0,210,255,0.05); border-top:1px solid rgba(0,210,255,0.15); border-bottom:1px solid rgba(0,210,255,0.15); overflow:hidden; padding:10px 0; }
+.marquee-strip { background:rgba(0,255,136,0.05); border-top:1px solid rgba(0,255,136,0.15); border-bottom:1px solid rgba(0,255,136,0.15); overflow:hidden; padding:10px 0; }
 .marquee-inner { display:flex; gap:0; white-space:nowrap; animation: marquee 30s linear infinite; }
 .marquee-item { font-family:'Orbitron',sans-serif; font-size:0.75rem; color:var(--primary); letter-spacing:0.15em; padding:0 20px; }
-.marquee-dot { color:rgba(0,210,255,0.4); font-size:0.5rem; vertical-align:middle; }
+.marquee-dot { color:rgba(0,255,136,0.4); font-size:0.5rem; vertical-align:middle; }
 @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
 /* ─── Section Headings ──────────────────────────────────── */
-.section-tag { font-family:'Orbitron',sans-serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--primary); border:1px solid rgba(0,210,255,0.25); padding:4px 12px; border-radius:100px; display:inline-block; }
+.section-tag { font-family:'Orbitron',sans-serif; font-size:0.7rem; letter-spacing:0.2em; color:var(--primary); border:1px solid rgba(0,255,136,0.25); padding:4px 12px; border-radius:100px; display:inline-block; }
 .section-title { font-family:'Orbitron',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:900; color:#fff; }
 
 /* ─── Feature Cards ─────────────────────────────────────── */
-.feature-card { background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:28px; height:100%; transition:all 0.3s ease; position:relative; overflow:hidden; backdrop-filter:blur(10px); }
+.feature-card { background:rgba(0,20,10,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:28px; height:100%; transition:all 0.3s ease; position:relative; overflow:hidden; backdrop-filter:blur(10px); }
 .feature-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg, transparent, var(--accent), transparent); opacity:0; transition:opacity 0.3s; }
 .feature-card:hover { border-color:color-mix(in srgb, var(--accent) 40%, transparent); transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,0.3); }
 .feature-card:hover::before { opacity:1; }
@@ -333,24 +333,24 @@
 .feature-card:hover .feature-line { width:80px; opacity:1; }
 
 /* ─── Product Cards Landing ─────────────────────────────── */
-.product-card-landing { background:rgba(15,23,42,0.65); border:1px solid rgba(255,255,255,0.06); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:all 0.3s ease; backdrop-filter:blur(10px); }
-.product-card-landing:hover { border-color:rgba(0,210,255,0.3); transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+.product-card-landing { background:rgba(0,20,10,0.65); border:1px solid rgba(255,255,255,0.06); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:all 0.3s ease; backdrop-filter:blur(10px); }
+.product-card-landing:hover { border-color:rgba(0,255,136,0.3); transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
 .product-img-wrap { position:relative; overflow:hidden; aspect-ratio:4/3; }
 .product-img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; filter:grayscale(20%); }
 .product-card-landing:hover .product-img { transform:scale(1.08); filter:grayscale(0%); }
-.product-img-placeholder { width:100%; height:100%; background:rgba(0,210,255,0.05); display:flex; align-items:center; justify-content:center; font-size:4rem; }
+.product-img-placeholder { width:100%; height:100%; background:rgba(0,255,136,0.05); display:flex; align-items:center; justify-content:center; font-size:4rem; }
 .product-overlay { position:absolute; inset:0; background:rgba(3,7,18,0.7); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; backdrop-filter:blur(4px); }
 .product-card-landing:hover .product-overlay { opacity:1; }
 .product-info { padding:18px; display:flex; flex-direction:column; flex:1; }
 .product-name { font-family:'Orbitron',sans-serif; font-size:0.85rem; color:#e5e7eb; letter-spacing:0.05em; margin-bottom:8px; }
 .product-desc { color:#6b7280; font-size:0.85rem; line-height:1.5; flex:1; }
-.product-price { font-family:'Orbitron',sans-serif; font-size:1.2rem; color:var(--primary); font-weight:700; text-shadow:0 0 10px rgba(0,210,255,0.4); }
+.product-price { font-family:'Orbitron',sans-serif; font-size:1.2rem; color:var(--primary); font-weight:700; text-shadow:0 0 10px rgba(0,255,136,0.4); }
 .product-link { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:var(--primary); text-decoration:none; letter-spacing:0.1em; transition:all 0.2s; }
-.product-link:hover { text-shadow:0 0 8px rgba(0,210,255,0.6); }
+.product-link:hover { text-shadow:0 0 8px rgba(0,255,136,0.6); }
 
 /* ─── Game Teaser Cards ─────────────────────────────────── */
 .game-card-link { text-decoration:none; display:block; }
-.game-teaser-card { background:rgba(15,23,42,0.65); border:1px solid color-mix(in srgb, var(--gcolor) 25%, transparent); border-radius:16px; padding:28px 20px; text-align:center; transition:all 0.35s ease; position:relative; overflow:hidden; backdrop-filter:blur(10px); }
+.game-teaser-card { background:rgba(0,20,10,0.65); border:1px solid color-mix(in srgb, var(--gcolor) 25%, transparent); border-radius:16px; padding:28px 20px; text-align:center; transition:all 0.35s ease; position:relative; overflow:hidden; backdrop-filter:blur(10px); }
 .game-teaser-card::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--gcolor) 15%, transparent) 0%, transparent 60%); opacity:0; transition:opacity 0.35s; }
 .game-teaser-card:hover { transform:translateY(-8px) scale(1.02); border-color:color-mix(in srgb, var(--gcolor) 60%, transparent); box-shadow:0 20px 50px rgba(0,0,0,0.4), 0 0 40px color-mix(in srgb, var(--gcolor) 15%, transparent); }
 .game-teaser-card:hover::before { opacity:1; }
@@ -360,20 +360,21 @@
 .game-name { font-family:'Orbitron',sans-serif; font-size:0.85rem; color:#e5e7eb; letter-spacing:0.08em; margin-bottom:10px; }
 .game-desc { color:#6b7280; font-size:0.8rem; line-height:1.5; margin-bottom:16px; }
 .game-play-btn { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:var(--gcolor); letter-spacing:0.15em; padding:8px 16px; border:1px solid color-mix(in srgb, var(--gcolor) 40%, transparent); border-radius:4px; transition:all 0.3s; display:inline-block; }
-.game-teaser-card:hover .game-play-btn { background:var(--gcolor); color:#030712; border-color:var(--gcolor); }
+.game-teaser-card:hover .game-play-btn { background:var(--gcolor); color:#010d06; border-color:var(--gcolor); }
 
 /* ─── Category Chips ────────────────────────────────────── */
-.category-chip { display:inline-flex; align-items:center; gap:8px; background:rgba(15,23,42,0.6); border:1px solid rgba(168,85,247,0.25); border-radius:100px; padding:10px 20px; font-family:'Orbitron',sans-serif; font-size:0.75rem; color:#c4b5fd; text-decoration:none; transition:all 0.3s; letter-spacing:0.1em; }
+.category-chip { display:inline-flex; align-items:center; gap:8px; background:rgba(0,20,10,0.6); border:1px solid rgba(168,85,247,0.25); border-radius:100px; padding:10px 20px; font-family:'Orbitron',sans-serif; font-size:0.75rem; color:#c4b5fd; text-decoration:none; transition:all 0.3s; letter-spacing:0.1em; }
 .category-chip:hover { background:rgba(168,85,247,0.15); border-color:rgba(168,85,247,0.6); color:#e9d5ff; box-shadow:0 0 20px rgba(168,85,247,0.2); transform:translateY(-2px); }
 .chip-count { background:rgba(168,85,247,0.2); border-radius:100px; padding:2px 8px; font-size:0.65rem; color:#a855f7; }
 
 /* ─── CTA Box ───────────────────────────────────────────── */
-.cta-box { background:rgba(15,23,42,0.7); border:1px solid rgba(0,210,255,0.15); border-radius:24px; padding:60px 40px; position:relative; overflow:hidden; backdrop-filter:blur(10px); }
-.cta-glow { position:absolute; width:500px; height:500px; top:50%; left:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(0,210,255,0.06) 0%, transparent 70%); pointer-events:none; }
+.cta-box { background:rgba(0,20,10,0.7); border:1px solid rgba(0,255,136,0.15); border-radius:24px; padding:60px 40px; position:relative; overflow:hidden; backdrop-filter:blur(10px); }
+.cta-glow { position:absolute; width:500px; height:500px; top:50%; left:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(0,255,136,0.06) 0%, transparent 70%); pointer-events:none; }
 
 /* ─── Canvas grid background ────────────────────────────── */
-#hero-grid { background-image: linear-gradient(rgba(0,210,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,210,255,0.04) 1px, transparent 1px); background-size: 40px 40px; animation: grid-shift 20s linear infinite; }
+#hero-grid { background-image: linear-gradient(rgba(0,255,136,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.04) 1px, transparent 1px); background-size: 40px 40px; animation: grid-shift 20s linear infinite; }
 @keyframes grid-shift { from{background-position: 0 0;} to{background-position: 40px 40px;} }
 </style>
 
 @endsection
+

@@ -41,7 +41,7 @@
 
         {{-- CYBER TETRIS --}}
         <div class="col-md-6 col-lg-3">
-            <div class="game-card" style="--gc:#00d2ff">
+            <div class="game-card" style="--gc:#00ff88">
                 <div class="game-card-bg"></div>
                 <div class="game-card-inner">
                     <div class="gc-tag">PUZZLE</div>
@@ -52,7 +52,7 @@
                         <span class="gc-diff" style="color:#f59e0b">●●●●○ MEDIUM</span>
                         <span class="gc-ctrl">⌨ ARROW KEYS</span>
                     </div>
-                    <a href="{{ route('games.tetris') }}" class="gc-play-btn" style="border-color:#00d2ff; color:#00d2ff;">PLAY NOW ▶</a>
+                    <a href="{{ route('games.tetris') }}" class="gc-play-btn" style="border-color:#00ff88; color:#00ff88;">PLAY NOW ▶</a>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
 .hub-grid-bg { position:absolute; inset:0; background-image:linear-gradient(rgba(168,85,247,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(168,85,247,0.04) 1px,transparent 1px); background-size:40px 40px; }
 .orb-hub { position:absolute; border-radius:50%; pointer-events:none; }
 .orb-hub-1 { width:300px; height:300px; top:-100px; left:-50px; background:radial-gradient(circle,rgba(168,85,247,0.12) 0%,transparent 70%); }
-.orb-hub-2 { width:250px; height:250px; bottom:-80px; right:-30px; background:radial-gradient(circle,rgba(0,210,255,0.1) 0%,transparent 70%); }
+.orb-hub-2 { width:250px; height:250px; bottom:-80px; right:-30px; background:radial-gradient(circle,rgba(0,255,136,0.1) 0%,transparent 70%); }
 .hub-badge { background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.3); border-radius:100px; padding:6px 16px; font-family:'Orbitron',sans-serif; font-size:0.65rem; color:#c4b5fd; letter-spacing:0.1em; }
 .badge-dot { width:8px; height:8px; border-radius:50%; animation:pulse-dot 2s ease infinite; }
 @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
@@ -131,12 +131,12 @@
 .gc-diff,.gc-ctrl { font-family:'Orbitron',sans-serif; font-size:0.65rem; letter-spacing:0.1em; }
 .gc-ctrl { color:#4b5563; }
 .gc-play-btn { display:block; text-align:center; font-family:'Orbitron',sans-serif; font-size:0.75rem; font-weight:700; letter-spacing:0.15em; color:#10b981; border:1.5px solid rgba(16,185,129,0.5); border-radius:6px; padding:12px; text-decoration:none; transition:all 0.3s; }
-.gc-play-btn:hover { background:var(--gc); color:#030712; border-color:var(--gc); box-shadow:0 0 20px color-mix(in srgb,var(--gc) 40%,transparent); }
+.gc-play-btn:hover { background:var(--gc); color:#010d06; border-color:var(--gc); box-shadow:0 0 20px color-mix(in srgb,var(--gc) 40%,transparent); }
 
 /* Shared Buttons */
 .btn-cyber { display:inline-flex; align-items:center; gap:8px; font-family:'Orbitron',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.1em; text-decoration:none; cursor:pointer; transition:all 0.3s ease; padding:12px 28px; border-radius:4px; text-transform:uppercase; border:none; }
-.btn-cyber-primary { background:transparent; border:1.5px solid var(--primary); color:var(--primary); box-shadow:0 0 15px rgba(0,210,255,0.15); }
-.btn-cyber-primary:hover { background:var(--primary); color:#030712; box-shadow:0 0 30px rgba(0,210,255,0.5); }
+.btn-cyber-primary { background:transparent; border:1.5px solid var(--primary); color:var(--primary); box-shadow:0 0 15px rgba(0,255,136,0.15); }
+.btn-cyber-primary:hover { background:var(--primary); color:#010d06; box-shadow:0 0 30px rgba(0,255,136,0.5); }
 .btn-cyber-outline { background:transparent; border:1.5px solid rgba(255,255,255,0.2); color:#e5e7eb; }
 .btn-cyber-outline:hover { border-color:rgba(168,85,247,0.6); color:#c4b5fd; box-shadow:0 0 15px rgba(168,85,247,0.2); }
 </style>

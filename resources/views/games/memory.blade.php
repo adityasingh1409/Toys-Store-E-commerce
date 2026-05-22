@@ -18,7 +18,7 @@
     <div class="memory-hud mb-4">
         <div class="hud-stat"><span class="hud-lbl">MOVES</span><span class="hud-val" id="mem-moves" style="color:#f59e0b">0</span></div>
         <div class="hud-stat"><span class="hud-lbl">MATCHES</span><span class="hud-val" id="mem-matches" style="color:#10b981">0/8</span></div>
-        <div class="hud-stat"><span class="hud-lbl">TIME</span><span class="hud-val" id="mem-time" style="color:#00d2ff">00:00</span></div>
+        <div class="hud-stat"><span class="hud-lbl">TIME</span><span class="hud-val" id="mem-time" style="color:#00ff88">00:00</span></div>
         <div class="hud-stat"><span class="hud-lbl">BEST TIME</span><span class="hud-val" id="mem-best" style="color:#a855f7">--:--</span></div>
         <div class="ms-auto d-flex gap-2 align-items-center flex-wrap">
             <select id="difficulty-select" class="difficulty-select">
@@ -44,7 +44,7 @@
             <div class="overlay-content">
                 <div style="font-size:3.5rem; margin-bottom:12px;">🏆</div>
                 <h2 style="font-family:'Orbitron',sans-serif; color:#10b981; font-size:1.6rem; margin-bottom:6px;">BOARD CLEARED!</h2>
-                <p style="color:#9ca3af; margin-bottom:4px;">Time: <span id="win-time" style="color:#00d2ff; font-family:'Orbitron',sans-serif; font-weight:700; font-size:1.2rem;"></span></p>
+                <p style="color:#9ca3af; margin-bottom:4px;">Time: <span id="win-time" style="color:#00ff88; font-family:'Orbitron',sans-serif; font-weight:700; font-size:1.2rem;"></span></p>
                 <p style="color:#9ca3af; margin-bottom:20px;">Moves: <span id="win-moves" style="color:#f59e0b; font-family:'Orbitron',sans-serif; font-weight:700; font-size:1.2rem;"></span></p>
                 <button id="mem-win-btn" class="game-btn" style="--bc:#10b981">▶ PLAY AGAIN</button>
             </div>
@@ -54,7 +54,7 @@
 </div>
 
 <style>
-:root { --primary:#00d2ff; }
+:root { --primary:#00ff88; }
 .game-back-link { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:#6b7280; text-decoration:none; letter-spacing:0.1em; transition:color 0.2s; }
 .game-back-link:hover { color:var(--primary); }
 .game-page-title { font-family:'Orbitron',sans-serif; font-size:clamp(1.4rem,3vw,2rem); color:#fff; margin:0; }
@@ -68,9 +68,9 @@
 .difficulty-select { background:rgba(15,23,42,0.8); border:1px solid rgba(245,158,11,0.3); color:#e5e7eb; font-family:'Orbitron',sans-serif; font-size:0.7rem; padding:8px 12px; border-radius:6px; cursor:pointer; letter-spacing:0.05em; }
 .difficulty-select:focus { outline:none; border-color:rgba(245,158,11,0.6); box-shadow:0 0 0 2px rgba(245,158,11,0.15); }
 .game-btn-sm { font-family:'Orbitron',sans-serif; font-weight:700; font-size:0.7rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.3s ease; padding:9px 18px; border-radius:6px; text-transform:uppercase; border:1.5px solid var(--bc); background:transparent; color:var(--bc); }
-.game-btn-sm:hover { background:var(--bc); color:#030712; }
+.game-btn-sm:hover { background:var(--bc); color:#010d06; }
 .game-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:'Orbitron',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.3s ease; padding:13px 28px; border-radius:6px; text-transform:uppercase; border:1.5px solid var(--bc); background:transparent; color:var(--bc); }
-.game-btn:hover { background:var(--bc); color:#030712; box-shadow:0 0 30px color-mix(in srgb,var(--bc) 45%,transparent); transform:translateY(-2px); }
+.game-btn:hover { background:var(--bc); color:#010d06; box-shadow:0 0 30px color-mix(in srgb,var(--bc) 45%,transparent); transform:translateY(-2px); }
 
 /* Arena */
 .memory-arena { background:rgba(15,23,42,0.5); border:1px solid rgba(245,158,11,0.15); border-radius:16px; padding:30px; position:relative; min-height:300px; backdrop-filter:blur(8px); }

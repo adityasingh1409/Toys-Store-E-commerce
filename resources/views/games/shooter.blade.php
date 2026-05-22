@@ -78,7 +78,7 @@
 </div>
 
 <style>
-:root { --primary:#00d2ff; }
+:root { --primary:#00ff88; }
 .game-back-link { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:#6b7280; text-decoration:none; letter-spacing:0.1em; transition:color 0.2s; }
 .game-back-link:hover { color:var(--primary); }
 .game-page-title { font-family:'Orbitron',sans-serif; font-size:clamp(1.4rem,3vw,2rem); color:#fff; margin:0; }
@@ -89,7 +89,7 @@
 .overlay-title { font-family:'Orbitron',sans-serif; font-size:1.8rem; margin-bottom:10px; }
 .overlay-sub { color:#6b7280; font-size:0.9rem; line-height:1.6; margin-bottom:24px; }
 .game-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:'Orbitron',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.12em; cursor:pointer; transition:all 0.3s ease; padding:13px 28px; border-radius:6px; text-transform:uppercase; border:1.5px solid var(--bc); background:transparent; color:var(--bc); }
-.game-btn:hover { background:var(--bc); color:#030712; box-shadow:0 0 30px color-mix(in srgb,var(--bc) 45%,transparent); transform:translateY(-2px); }
+.game-btn:hover { background:var(--bc); color:#010d06; box-shadow:0 0 30px color-mix(in srgb,var(--bc) 45%,transparent); transform:translateY(-2px); }
 .game-stat-panel,.game-controls-panel { background:rgba(15,23,42,0.7); border:1px solid rgba(239,68,68,0.2); border-radius:12px; padding:20px; backdrop-filter:blur(8px); }
 .stat-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
 .stat-row:last-child { border:0; }
@@ -98,11 +98,11 @@
 .panel-title { font-family:'Orbitron',sans-serif; font-size:0.7rem; color:#6b7280; letter-spacing:0.2em; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:8px; }
 .ctrl-list { display:flex; flex-direction:column; gap:8px; }
 .ctrl-item { display:flex; align-items:center; gap:12px; }
-.ctrl-key { font-family:'Orbitron',sans-serif; font-size:0.65rem; background:rgba(0,210,255,0.1); border:1px solid rgba(0,210,255,0.25); border-radius:4px; padding:3px 8px; color:var(--primary); min-width:60px; text-align:center; }
+.ctrl-key { font-family:'Orbitron',sans-serif; font-size:0.65rem; background:rgba(0,255,136,0.1); border:1px solid rgba(0,255,136,0.25); border-radius:4px; padding:3px 8px; color:var(--primary); min-width:60px; text-align:center; }
 .ctrl-desc { font-size:0.8rem; color:#9ca3af; }
 .rules-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
 .rules-list li { font-size:0.85rem; color:#9ca3af; }
-.mob-btn { display:flex; align-items:center; justify-content:center; border:1px solid rgba(0,210,255,0.4); color:var(--primary); font-size:1.2rem; width:52px; height:52px; border-radius:8px; cursor:pointer; transition:all 0.2s; background:rgba(0,210,255,0.08); }
+.mob-btn { display:flex; align-items:center; justify-content:center; border:1px solid rgba(0,255,136,0.4); color:var(--primary); font-size:1.2rem; width:52px; height:52px; border-radius:8px; cursor:pointer; transition:all 0.2s; background:rgba(0,255,136,0.08); }
 .mob-btn:hover,.mob-btn:active { background:rgba(239,68,68,0.3); }
 .flex-1 { flex:1; }
 </style>
@@ -253,9 +253,9 @@ function render(){
     // Player
     const px=player.x, py=player.y;
     if(player.invincible>0&&Math.floor(player.invincible/6)%2===0){ /* blink */ } else {
-        ctx.shadowColor='#00d2ff'; ctx.shadowBlur=20;
+        ctx.shadowColor='#00ff88'; ctx.shadowBlur=20;
         // Ship body
-        ctx.fillStyle='#00d2ff';
+        ctx.fillStyle='#00ff88';
         ctx.beginPath(); ctx.moveTo(px,py-player.h/2); ctx.lineTo(px-player.w/2,py+player.h/2); ctx.lineTo(px,py+player.h/4); ctx.lineTo(px+player.w/2,py+player.h/2); ctx.closePath(); ctx.fill();
         // Engine glow
         ctx.shadowColor='#a855f7'; ctx.shadowBlur=15;
