@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
@@ -10,8 +11,33 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Landing page (new home)
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+
+// Shop (products listing — previously the home route)
+Route::get('/shop', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{product}', [HomeController::class, 'show'])->name('product.show');
+
+// Games Hub
+Route::get('/games', function () {
+    return view('games.index');
+})->name('games.index');
+
+Route::get('/games/snake', function () {
+    return view('games.snake');
+})->name('games.snake');
+
+Route::get('/games/tetris', function () {
+    return view('games.tetris');
+})->name('games.tetris');
+
+Route::get('/games/shooter', function () {
+    return view('games.shooter');
+})->name('games.shooter');
+
+Route::get('/games/memory', function () {
+    return view('games.memory');
+})->name('games.memory');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {

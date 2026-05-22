@@ -211,7 +211,15 @@
                 <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="{{ route('landing') }}">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">SHOP</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center gap-1" href="{{ route('games.index') }}">
+                            <span style="color:#a855f7; text-shadow: 0 0 8px rgba(168,85,247,0.7);">&#9679;</span>
+                            GAMES_HUB
+                        </a>
+                    </li>
                     @auth 
                         @if(auth()->user()->role == 'admin') 
                             <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">ADMIN_DASHBOARD</a></li> 
