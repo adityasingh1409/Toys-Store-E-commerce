@@ -1,0 +1,108 @@
+# ═══════════════════════════════════════════════════════
+#  docker-compose.yml — Toys Store E-commerce
+#  Runs 3 containers: Laravel App + MySQL + Nginx
+#  Usage: docker-compose up -d
+# ═══════════════════════════════════════════════════════
+
+version: '3.8'
+
+services:
+
+  # ─────────────────────────────────────────
+  #  1. PHP Laravel Application Container
+  # ─────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: toystore_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      # Mount storage so uploaded files persist across restarts
+      - app_storage:/var/www/storage
+      # Mount logs for easy access
+      - app_logs:/var/www/storage/logs
+    environment:
+      - APP_NAME=ToyStore
+      - APP_ENV=${APP_ENV:-production}
+      - APP_KEY=${APP_KEY}
+      - APP_DEBUG=${APP_DEBUG:-false}
+      - APP_URL=${APP_URL:-http://localhost:8080}
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=${DB_DATABASE:-myproject}
+      - DB_USERNAME=${DB_USERNAME:-toystore_user}
+      - DB_PASSWORD=${DB_PASSWORD:-secret}
+      - CACHE_DRIVER=file
+      - SESSION_DRIVER=file
+      - QUEUE_CONNECTION=sync
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - toystore_network
+
+  # ─────────────────────────────────────────
+  #  2. Nginx Web Server Container
+  #  Handles HTTP requests → forwards PHP to app
+  # ─────────────────────────────────────────
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: toystore_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"      # Access app at http://localhost:8080
+    volumes:
+      - .:/var/www                                        # Serve static files
+      - app_storage:/var/www/storage                     # Uploaded files
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf  # Nginx config
+    depends_on:
+      - app
+    networks:
+      - toystore_network
+
+  # ─────────────────────────────────────────
+  #  3. MySQL Database Container
+  # ─────────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    container_name: toystore_mysql
+    restart: unless-stopped
+    ports:
+      - "3307:3306"    # Port 3307 to avoid conflict with local MySQL/XAMPP
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-myproject}
+      MYSQL_USER: ${DB_USERNAME:-toystore_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootsecret}
+    volumes:
+      - mysql_data:/var/lib/mysql    # Persist database across restarts
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD:-rootsecret}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - toystore_network
+
+# ─────────────────────────────────────────
+#  Shared Network (containers talk to each other)
+# ─────────────────────────────────────────
+networks:
+  toystore_network:
+    driver: bridge
+
+# ─────────────────────────────────────────
+#  Persistent Volumes (data survives restart)
+# ─────────────────────────────────────────
+volumes:
+  mysql_data:
+    driver: local
+  app_storage:
+    driver: local
+  app_logs:
+    driver: local

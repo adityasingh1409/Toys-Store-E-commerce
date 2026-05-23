@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════════════
+#  .dockerignore — Files to EXCLUDE from Docker image
+#  Like .gitignore but for Docker build context
+#  Keeps image small and secure
+# ═══════════════════════════════════════════════════════
+
+# PHP dependencies (will be installed fresh inside container)
+/vendor
+
+# Node dependencies (will be installed fresh inside container)
+/node_modules
+
+# Git files (not needed in container)
+.git
+.gitignore
+.gitattributes
+
+# Environment files (NEVER include in Docker image — use secrets!)
+.env
+.env.*
+!.env.example
+
+# Docker files (container doesn't need these)
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+.dockerignore
+
+# XAMPP / local dev files
+/public/hot
+/public/storage
+
+# Laravel logs and cache (generated at runtime)
+/storage/logs/*.log
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*.php
+
+# Test files (not needed in production)
+/tests
+phpunit.xml
+.phpunit.result.cache
+
+# IDE and editor files
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# NPM logs
+npm-debug.log*
+yarn-debug.log*
+
+# Build artifacts (rebuilt inside container)
+/public/build
+
+# Dev scripts (not needed in container)
+generate_*.php
+fix_*.php
+rename.php
+setup_*.php
+update_*.php
+
+# Docs
+README.md
+DEVOPS.md
