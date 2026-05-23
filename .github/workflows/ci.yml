@@ -116,9 +116,10 @@ jobs:
         with:
           context: .
           push: false           # Don't push to registry (just build to verify)
+          load: true            # Load image into local Docker (required with docker-container driver)
           tags: toystore:${{ github.sha }}
-          cache-from: type=gld,scope=build-toystore
-          cache-to: type=gld,mode=max,scope=build-toystore
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: ✅ Docker build successful!
         run: echo "Docker image built successfully for commit ${{ github.sha }}"
