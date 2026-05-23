@@ -50,8 +50,8 @@ RUN composer install \
 # Copy package.json for npm
 COPY package.json package-lock.json ./
 
-# Install Node dependencies
-RUN npm ci --omit=dev
+# Install Node dependencies (ALL deps needed — vite is a devDependency!)
+RUN npm ci
 
 # Copy the rest of the application code
 COPY . .
