@@ -7,8 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 abstract class TestCase extends BaseTestCase
 {
-    // Refresh SQLite in-memory DB before every test
-    // This runs all migrations so tables exist
+    // Run all migrations before every test (creates SQLite in-memory tables)
     use RefreshDatabase;
 
     protected function setUp(): void
@@ -16,7 +15,11 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
 
         // Bypass CSRF token validation in all tests
-        // This fixes HTTP 419 errors on POST requests
-        $this->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+        // In Laravel 11/12, CSRF lives in the Illuminate framework namespace
+        // (App\Http\Middleware\VerifyCsrfToken no longer exists)
+        $this->withoutMiddleware([
+            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
+            \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+        ]);
     }
 }
