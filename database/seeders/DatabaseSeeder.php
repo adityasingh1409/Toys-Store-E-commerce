@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // 1 Admin user
-        User::factory()->create([
+        User::create([
             'name' => 'Admin User',
             'email' => 'admin@toystore.com',
             'password' => Hash::make('password'),
@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // 1 Customer user
-        User::factory()->create([
+        User::create([
             'name' => 'Customer User',
             'email' => 'customer@toystore.com',
             'password' => Hash::make('password'),

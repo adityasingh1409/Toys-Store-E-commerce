@@ -29,7 +29,7 @@ DB_DATABASE=myproject
 DB_USERNAME=toystore_user
 DB_PASSWORD=secret123
 DB_ROOT_PASSWORD=rootsecret123
-APP_URL=http://localhost:8080
+APP_URL=http://localhost:8082
 ```
 
 ### Step 2 — Generate App Key
@@ -44,7 +44,7 @@ docker-compose up -d
 
 This starts:
 - 🟢 **toystore_app** → Laravel PHP app (port 9000)
-- 🟢 **toystore_nginx** → Web server (port 8080)
+- 🟢 **toystore_nginx** → Web server (port 8082)
 - 🟢 **toystore_mysql** → MySQL database (port 3307)
 
 ### Step 4 — Run database migrations
@@ -54,7 +54,7 @@ docker-compose exec app php artisan migrate --seed
 
 ### Step 5 — Open the app
 ```
-http://localhost:8080
+http://localhost:8082
 ```
 
 ### Useful Docker Commands
@@ -206,7 +206,7 @@ git push to GitHub
 │  → Deploys automatically        │
 └─────────────────────────────────┘
      ↓
-App live at http://localhost:8080 ✅
+App live at http://localhost:8082 ✅
 ```
 
 ---

@@ -208,7 +208,7 @@ pipeline {
 
                 // Wait a moment then check the app responds
                 bat 'timeout /t 5 /nobreak > NUL'
-                bat 'curl -f http://localhost:8080 || echo "Warning: Health check failed but continuing"'
+                bat 'curl -f http://localhost:8082 || echo "Warning: Health check failed but continuing"'
 
                 echo '✅ Health check done!'
             }
@@ -224,7 +224,7 @@ pipeline {
             echo '''
             ╔══════════════════════════════════════╗
             ║  ✅  PIPELINE SUCCEEDED!              ║
-            ║  App is live at: http://localhost:8080 ║
+            ║  App is live at: http://localhost:8082 ║
             ╚══════════════════════════════════════╝
             '''
         }
